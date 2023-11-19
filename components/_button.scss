@@ -1,0 +1,26 @@
+.btns{
+  width: 119px;
+  height: 64px;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.btns p{
+  margin-bottom: 0;
+  font-weight: bold;
+}
+.btns svg{
+  margin: 4px;
+}
+.btn-gray{
+  background: var(--gray-100);
+}
+.btn-white{
+  background: #fff;
+}
+.btn-brown{
+  background: var(--brown);
+  color: #fff;
+}
