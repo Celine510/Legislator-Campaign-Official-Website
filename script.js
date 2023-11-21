@@ -1,10 +1,11 @@
-const modalBodyActivePart = document.querySelector('.modal-body-active-part');
+const modalBodyActivePart = document.querySelectorAll('.modal-body-active-part');
+const copyrightPart = document.querySelector('.footer-info-first-copyright');
 
 // contactUs - donate
 function donate(){
   // contactUs - donate：conduct modal-body-active-part screen
-  if (modalBodyActivePart.classList[1] !== 'active') {
-    modalBodyActivePart.innerHTML = `
+  if (modalBodyActivePart[0].classList[1] !== 'active') {
+    modalBodyActivePart[0].innerHTML = `
     <p class="modal-body-active-part-title fs-5 fw-bold">捐款方案</p>
     <!-- program 1 -->
     <button class="donatePlan-btn active">
@@ -84,8 +85,8 @@ function donate(){
 
   const btnDonatePayment = document.querySelector('#btn-donatePayment');
   btnDonatePayment.addEventListener('click', e => {
-    modalBodyActivePart.classList.add('active');
-    modalBodyActivePart.innerHTML = `
+    modalBodyActivePart[0].classList.add('active');
+    modalBodyActivePart[0].innerHTML = `
     <div class="fs-3 fw-bold">感謝您的捐款</div>
     <img src="/img/Group 15.png" alt="">
     <button class="btns btn-gray" data-bs-dismiss="modal" id="close">
@@ -93,16 +94,72 @@ function donate(){
     </button>`;
     const close = document.querySelector('#close');
     close.addEventListener('click', e => {
-      modalBodyActivePart.classList.remove('active');
+      modalBodyActivePart[0].classList.remove('active');
       render();
     });
   });
 };
 
+// contactUs - email
+function email(){
+  // contactUs - email modal-body-active-part screen
+  if (modalBodyActivePart[1].classList[1] !== 'active') {
+    modalBodyActivePart[1].innerHTML = `
+    <ul>
+      <li>
+        <label for="inputname" class="form-label fw-bold">您的姓名</label>
+        <input type="text" id="inputname" class="form-control fs-m-16" placeholder="姓名">
+      </li>
+      <li>
+        <label for="inputemail" class="form-label fw-bold">Email</label>
+        <input type="text" id="inputemail" class="form-control fs-m-16" placeholder="email">
+      </li>
+      <li>
+        <label for="inputphone" class="form-label fw-bold">手機</label>
+        <input type="text" id="inputphone" class="form-control fs-m-16" placeholder="手機號碼">
+      </li>
+      <li>
+        <label for="inputmsg" class="form-label fw-bold">您的建言</label>
+        <!-- <input type="text" id="inputmsg" class="form-control fs-m-16" placeholder="輸入內容"> -->
+        <textarea name="inputmsg" id="inputmsg" class="form-control fs-m-16" cols="30" rows="6"
+          placeholder="輸入內容"></textarea>
+      </li>
+      <!-- submit btn -->
+      <li>
+        <button class="btns btn-brown" type="submit" id="btn-submitForm">
+          <p class="h6">送出意見</p>
+        </button>
+      </li>
+    </ul>`
+  };
 
+  const submitFormBtn = document.querySelector('#btn-submitForm');
+  submitFormBtn.addEventListener('click', e => {
+    e.preventDefault();
+    modalBodyActivePart[1].classList.add('active');
+    modalBodyActivePart[1].innerHTML = `
+      <div class="fs-3 fw-bold">感謝您的意見</div>
+      <img src="/img/Group 15.png" alt="">
+      <button class="btns btn-gray" data-bs-dismiss="modal" id="close">
+        <p class="h6">關閉</p>
+      </button>`;
+    const close = document.querySelector('#close');
+    close.addEventListener('click', e => {
+      modalBodyActivePart[1].classList.remove('active');
+      render();
+    });
+  });
+};
+
+// footer - copyright's year
+function copyright(){
+  copyrightPart.textContent = `© ${new Date().getFullYear()} 喵立翰 Miao Li-Han 版權所有`;
+}
 
 function render(){
   donate();
+  email();
+  copyright();
 }
 
 render();
