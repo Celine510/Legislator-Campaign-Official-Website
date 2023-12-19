@@ -8,6 +8,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <!-- CSS -->
   <link rel="stylesheet" href="stylesheets/all.css">
 </head>
@@ -16,7 +19,8 @@
   <div class="header-container">
     <header class="container">
       <div class="header-logo">
-        <svg width="53" height="43" viewBox="0 0 53 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <img src="img/logo.png" alt="logo">
+        <!-- <svg width="53" height="43" viewBox="0 0 53 43" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd"
             d="M25.8493 42.9999C35.7246 42.9999 43.8214 35.3857 44.5893 25.7079C48.9596 24.5002 52.1687 20.4952 52.1687 15.7407C52.1687 10.0302 47.5395 5.40094 41.829 5.40094C39.5599 5.40094 37.4615 6.13185 35.7565 7.37108C34.4808 3.10747 30.5279 0 25.8492 0C21.269 0 17.3844 2.97811 16.0261 7.10357C14.3947 6.02736 12.4403 5.40094 10.3397 5.40094C4.62925 5.40094 0 10.0302 0 15.7407C0 20.319 2.97561 24.2023 7.09837 25.5621C7.79605 35.3092 15.9245 42.9999 25.8493 42.9999Z"
             fill="url(#paint0_linear_4732_1963)" />
@@ -30,7 +34,7 @@
               <stop offset="1" stop-color="#FF4185" />
             </linearGradient>
           </defs>
-        </svg>
+        </svg> -->
         <div class="fs-4 header-logo-name">喵立翰 Miao Li-Han</div>
       </div>
       <div class="header-nav">
@@ -87,6 +91,8 @@
   <div class="banner-container container">
     <div class="banner-content">
       <h1 class="title">台灣的明天 喵先鋪路</h1>
+      <!-- md h1 -->
+      <h1 class="title">台灣的明天<br>喵先鋪路</h1>
       <div class="banner-content-intro">
         <h3 class="tag banner-content-intro-tag">2024 立委候選人</h3>
         <div class="banner-content-intro-namePart">
@@ -130,7 +136,7 @@
           <div class="fs-s-14 tag">ADVOCATE</div>
           <div class="title">候選人主張</div>
         </div>
-        <h4 class="fs-2 proposition-part-content-text">我堅信 ! 藉由推動更完善的<span>貓咪福利</span>和相關政策，更是間接地投資於<span>台灣的未來</span>。</h4>
+        <h4 class="proposition-part-content-text">我堅信 ! 藉由推動更完善的<span>貓咪福利</span>和相關政策，更是間接地投資於<span>台灣的未來</span>。</h4>
         <p class="proposition-part-content-p">
           畢竟，民眾的身心健康與工作熱情是推動經濟的核心動力。透過完善的貓咪福利政策，為台灣的 GDP 經濟帶來巨大效益。<br>
           因此，我期望能在立法院內推進這些政策，確保每一隻貓咪都能得到他們應有的照顧，同時也為台灣的經濟發展助一臂之力。讓我們一同護航台灣的幸福經濟，從照顧每一隻貓咪開始。
@@ -148,24 +154,24 @@
       <div class="title">最新活動</div>
     </div>
     <div class="news-content">
-      <a class="news-content-card-hl card" style="max-width: 540px;" data-bs-toggle="modal" data-bs-target="#newsModal-03">
+      <a class="news-content-card-hl card" data-bs-toggle="modal" data-bs-target="#newsModal-03">
         <div class="card-hl-img">
           <img alt="">
         </div>
         <div class="card-body">
           <p class="card-time fs-s-14">2023/12/26</p>
-          <p class="card-title fw-bold fw-5">參與台北寵物論壇，爭取貓咪友善環境</p>
+          <p class="card-title fw-bold h5">參與台北寵物論壇，爭取貓咪友善環境</p>
           <p class="card-text fs-m-16">炎炎夏日的周六，我走進了台北寵物論壇，帶著一副貓耳髮箍，決定要全力宣傳「貓咪至上」的理念！我相信，我們的都市中，每一隻貓咪都應該有自己的 VIP 休憩空間。</p>
         </div>
       </a>
       <div class="news-content-cards-container">
         <!-- newsModal-01 trigger -->
-        <a class="card" style="max-width: 540px;" data-bs-toggle="modal" data-bs-target="#newsModal-01">
+        <a class="card" data-bs-toggle="modal" data-bs-target="#newsModal-01">
           <div class="row g-0">
-            <div class="col-md-4">
+            <div class="col-3 col-md-4">
               <img src="img/news-image 01.jpeg" class="img-fluid" alt="...">
             </div>
-            <div class="col-md-8">
+            <div class="col-9 col-md-8">
               <div class="card-body">
                 <p class="card-time fs-s-14">2023/12/20</p>
                 <p class="card-title fs-6">掃街模式開啟！帶著你的貓耳，來和我一起走！</p>
@@ -275,12 +281,12 @@
           </div>
         </div>
         <!-- newsModal-02 trigger -->
-        <a class="card" style="max-width: 540px;" data-bs-toggle="modal" data-bs-target="#newsModal-02">
+        <a class="card" data-bs-toggle="modal" data-bs-target="#newsModal-02">
           <div class="row g-0">
-            <div class="col-md-4">
+            <div class="col-3 col-md-4">
               <img src="img/news-image 02.jpeg" class="img-fluid " alt="...">
             </div>
-            <div class="col-md-8">
+            <div class="col-9 col-md-8">
               <div class="card-body">
                 <p class="card-time fs-s-14">2023/12/24</p>
                 <p class="card-title fs-6">收容所模特兒大比拼</p>
@@ -395,12 +401,12 @@
           </div>
         </div>
         <!-- newsModal-03 trigger -->
-        <a class="card" style="max-width: 540px;" data-bs-toggle="modal" data-bs-target="#newsModal-03">
+        <a class="card" data-bs-toggle="modal" data-bs-target="#newsModal-03">
           <div class="row g-0">
-            <div class="col-md-4">
+            <div class="col-3 col-md-4">
               <img src="img/news-image 03.jpeg" class="img-fluid " alt="...">
             </div>
-            <div class="col-md-8">
+            <div class="col-9 col-md-8">
               <div class="card-body">
                 <p class="card-time fs-s-14">2023/12/26</p>
                 <p class="card-title fs-6">參與台北寵物論壇，爭取貓咪友善環境</p>
@@ -535,7 +541,7 @@
     </div>
     <div class="policy-body-part">
       <!-- policyModal-01 trigger -->
-      <a class="card" style="max-width: 540px;" data-bs-toggle="modal" data-bs-target="#policyModal-01">
+      <a class="card" data-bs-toggle="modal" data-bs-target="#policyModal-01">
         <p class="card-title fs-4 fw-bold">為毛孩子謀福利！<br>
         推動寵物醫療保障方案</p>
         <img src="img/image 5.png" class="img-fluid card-img" alt="...">
@@ -654,7 +660,7 @@
         </div>
       </div>
       <!-- policyModal-02 trigger -->
-      <a class="card" style="max-width: 540px;" data-bs-toggle="modal" data-bs-target="#policyModal-02">
+      <a class="card" data-bs-toggle="modal" data-bs-target="#policyModal-02">
         <p class="card-title fs-4 fw-bold">打造休閒天堂！<br>
         推廣寵物休閒與娛樂場所</p>
         <img src="img/image 6.png" class="img-fluid card-img" alt="...">
@@ -773,7 +779,7 @@
         </div>
       </div>
       <!-- policyModal-03 trigger -->
-      <a class="card" style="max-width: 540px;" data-bs-toggle="modal" data-bs-target="#policyModal-03">
+      <a class="card d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#policyModal-03">
         <p class="card-title fs-4 fw-bold">推廣寵物飼養教育，讓愛更加專業</p>
         <img src="img/image 9.png" class="img-fluid card-img" alt="...">
       </a>
@@ -891,6 +897,13 @@
         </div>
       </div>
     </div>
+    <!-- <992px  -->
+    <div class="policy-body-part policy-body-part-md">
+      <a class="card d-block d-lg-none" data-bs-toggle="modal" data-bs-target="#policyModal-03">
+        <p class="card-title fs-4 fw-bold">推廣寵物飼養教育，讓愛更加專業</p>
+        <img src="img/image 9.png" class="img-fluid card-img" alt="...">
+      </a>
+    </div>
   </section>
 
   <!-- contactUs - donate、email -->
@@ -927,10 +940,12 @@
               </div>
               <div class="modal-body">
                 <div class="modal-body-text-part">
-                  <div class="modal-body-text-part-title fs-1">您的小筆捐款<br>是每隻毛孩未來的大大動力！</div>
-                  <div class="modal-body-text-part-totalAmount">
-                    目前小額贊助總金額<br>
-                    <span class="fs-2">987,655,873</span>
+                  <div>
+                    <div class="modal-body-text-part-title fs-1">您的小筆捐款<br>是每隻毛孩未來的大大動力！</div>
+                    <div class="modal-body-text-part-totalAmount">
+                      目前小額贊助總金額<br>
+                      <span class="fs-2">987,655,873</span>
+                    </div>
                   </div>
                   <div class="modal-body-text-part-img">
                     <img src="img/image 11.png" alt="">
@@ -1038,7 +1053,9 @@
               <div class="modal-body">
                 <div class="modal-body-text-part">
                   <div class="modal-body-text-part-title fs-1">分享您的想法<br>一同為我們的未來打造更美好！</div>
-                  <img style="width: 731px" src="img/image 10.png" alt="">
+                  <div>
+                    <img src="img/image 10.png" alt="">
+                  </div>
                 </div>
                 <!-- JS conduct -->
                 <form class="modal-body-active-part" id="contactUsEmail">
@@ -1083,22 +1100,23 @@
   <section class="bottomBanner-container container">
     <div class="banner-content">
       <div class="title">台灣的明天 喵先鋪路</div>
-        <div class="banner-content-intro-namePart">
-          <svg width="51" height="50" viewBox="0 0 51 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="0.5" width="50" height="50" rx="25" fill="url(#paint0_linear_4819_2277)" />
-            <path
-              d="M25.3395 37.3182C23.5062 37.3182 21.8774 37.0038 20.4531 36.375C19.0365 35.7386 17.9228 34.8636 17.1122 33.75C16.3016 32.6364 15.8925 31.3561 15.8849 29.9091H22.2486C22.2562 30.3561 22.3925 30.7576 22.6577 31.1136C22.9304 31.4621 23.3016 31.7348 23.7713 31.9318C24.241 32.1288 24.7789 32.2273 25.3849 32.2273C25.9683 32.2273 26.4834 32.125 26.9304 31.9205C27.3774 31.7083 27.7259 31.4167 27.9759 31.0455C28.2259 30.6742 28.3471 30.25 28.3395 29.7727C28.3471 29.303 28.2031 28.8864 27.9077 28.5227C27.6198 28.1591 27.2145 27.875 26.6918 27.6705C26.169 27.4659 25.5668 27.3636 24.8849 27.3636H22.5213V23H24.8849C25.5137 23 26.0668 22.8977 26.544 22.6932C27.0289 22.4886 27.4039 22.2045 27.669 21.8409C27.9418 21.4773 28.0743 21.0606 28.0668 20.5909C28.0743 20.1364 27.9645 19.7348 27.7372 19.3864C27.5099 19.0379 27.1918 18.7652 26.7827 18.5682C26.3812 18.3712 25.9152 18.2727 25.3849 18.2727C24.8092 18.2727 24.294 18.375 23.8395 18.5795C23.3925 18.7841 23.0402 19.0682 22.7827 19.4318C22.5251 19.7955 22.3925 20.2121 22.3849 20.6818H16.3395C16.3471 19.2576 16.7372 18 17.5099 16.9091C18.2902 15.8182 19.3584 14.9621 20.7145 14.3409C22.0705 13.7197 23.6274 13.4091 25.3849 13.4091C27.1046 13.4091 28.6236 13.7008 29.9418 14.2841C31.2675 14.8674 32.3016 15.6705 33.044 16.6932C33.794 17.7083 34.1652 18.8712 34.1577 20.1818C34.1728 21.4848 33.7259 22.553 32.8168 23.3864C31.9152 24.2197 30.7713 24.7121 29.3849 24.8636V25.0455C31.2637 25.25 32.6766 25.8258 33.6236 26.7727C34.5706 27.7121 35.0365 28.8939 35.0213 30.3182C35.0289 31.6818 34.6198 32.8902 33.794 33.9432C32.9759 34.9962 31.8357 35.822 30.3736 36.4205C28.919 37.0189 27.241 37.3182 25.3395 37.3182Z"
-              fill="white" />
-            <defs>
-              <linearGradient id="paint0_linear_4819_2277" x1="1.27138" y1="30.5576" x2="49.4317" y2="30.5576"
-                gradientUnits="userSpaceOnUse">
-                <stop stop-color="#E6793B" />
-                <stop offset="1" stop-color="#FF4185" />
-              </linearGradient>
-            </defs>
-          </svg>
-          <p class="fs-2">喵立翰 Miao Li-Han</p>
-        </div>
+      <!-- md h1 -->
+      <div class="title">台灣的明天<br>喵先鋪路</div>
+      <div class="banner-content-intro-namePart">
+        <svg width="51" height="50" viewBox="0 0 51 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" width="50" height="50" rx="25" fill="url(#paint0_linear_4819_2277)" />
+          <path
+            d="M25.3395 37.3182C23.5062 37.3182 21.8774 37.0038 20.4531 36.375C19.0365 35.7386 17.9228 34.8636 17.1122 33.75C16.3016 32.6364 15.8925 31.3561 15.8849 29.9091H22.2486C22.2562 30.3561 22.3925 30.7576 22.6577 31.1136C22.9304 31.4621 23.3016 31.7348 23.7713 31.9318C24.241 32.1288 24.7789 32.2273 25.3849 32.2273C25.9683 32.2273 26.4834 32.125 26.9304 31.9205C27.3774 31.7083 27.7259 31.4167 27.9759 31.0455C28.2259 30.6742 28.3471 30.25 28.3395 29.7727C28.3471 29.303 28.2031 28.8864 27.9077 28.5227C27.6198 28.1591 27.2145 27.875 26.6918 27.6705C26.169 27.4659 25.5668 27.3636 24.8849 27.3636H22.5213V23H24.8849C25.5137 23 26.0668 22.8977 26.544 22.6932C27.0289 22.4886 27.4039 22.2045 27.669 21.8409C27.9418 21.4773 28.0743 21.0606 28.0668 20.5909C28.0743 20.1364 27.9645 19.7348 27.7372 19.3864C27.5099 19.0379 27.1918 18.7652 26.7827 18.5682C26.3812 18.3712 25.9152 18.2727 25.3849 18.2727C24.8092 18.2727 24.294 18.375 23.8395 18.5795C23.3925 18.7841 23.0402 19.0682 22.7827 19.4318C22.5251 19.7955 22.3925 20.2121 22.3849 20.6818H16.3395C16.3471 19.2576 16.7372 18 17.5099 16.9091C18.2902 15.8182 19.3584 14.9621 20.7145 14.3409C22.0705 13.7197 23.6274 13.4091 25.3849 13.4091C27.1046 13.4091 28.6236 13.7008 29.9418 14.2841C31.2675 14.8674 32.3016 15.6705 33.044 16.6932C33.794 17.7083 34.1652 18.8712 34.1577 20.1818C34.1728 21.4848 33.7259 22.553 32.8168 23.3864C31.9152 24.2197 30.7713 24.7121 29.3849 24.8636V25.0455C31.2637 25.25 32.6766 25.8258 33.6236 26.7727C34.5706 27.7121 35.0365 28.8939 35.0213 30.3182C35.0289 31.6818 34.6198 32.8902 33.794 33.9432C32.9759 34.9962 31.8357 35.822 30.3736 36.4205C28.919 37.0189 27.241 37.3182 25.3395 37.3182Z"
+            fill="white" />
+          <defs>
+            <linearGradient id="paint0_linear_4819_2277" x1="1.27138" y1="30.5576" x2="49.4317" y2="30.5576"
+              gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E6793B" />
+              <stop offset="1" stop-color="#FF4185" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <p class="fs-2">喵立翰 Miao Li-Han</p>
       </div>
     </div>
   </section>
@@ -1183,8 +1201,8 @@
 
 
   <!-- bootstrap -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <!-- JS -->
   <script src="script.js"></script>
 </body>
