@@ -1,8 +1,11 @@
 /* ------------------HEADER------------------ */
 .header-container{
   background: var(--bg-01);
-  opacity: 90%;
+  // opacity: 90%;
+  width: 100%;
+  z-index: 1;
   padding:16px 24px;
+  position: fixed;
 
   header{
   display: flex;
@@ -40,6 +43,7 @@
       li{
         padding: 8px;
         font-weight: 600;
+        text-wrap: nowrap;
       }
     }
   }
@@ -51,8 +55,7 @@
 }
 @media screen and (max-width: 992px) {
   .header-container {
-    position: fixed;
-    width: 100%;
+    position: relative;
     .header-nav{
       display: none;
     }
@@ -75,7 +78,7 @@
       font-size: 96px !important;
       line-height: 105%;
       letter-spacing: 2px;
-      padding-top: 96px;
+      padding-top: 203px;
       &:nth-child(2) {
         display: none;
       }
@@ -132,6 +135,7 @@
       h1 {
         font-size: 52px !important;
         text-align: center;
+        padding-top: 48px;
         &:nth-child(1){
           display: none;
         }
@@ -140,6 +144,7 @@
         }
       }
       .banner-content-intro {
+        flex-direction: column;
         gap: 4px;
         h3.banner-content-intro-tag {
           text-wrap: nowrap;
@@ -166,28 +171,22 @@
 /* ------------------SLOGAN------------------ */
 .slogan-container{
   background: var(--brown);
-
-  ul{
+  
+  .ticker{
+    overflow-x: hidden;
+    white-space: nowrap;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     padding-left: 0;
     margin-bottom: 0;
+    gap: 24px;
     
-    li{
+    span{
+      font-size: 64px;
       font-family: var(--ff-mantouSans);
       color: #fff;
-      word-wrap:wrap;
-    }
-  }
-}
-@media screen and (max-width: 992px) {
-  .slogan-container {
-    ul {
-      li {
-        text-wrap: nowrap;
-        overflow-x: hidden;
-      }
+      text-wrap:nowrap;
     }
   }
 }
@@ -511,8 +510,8 @@
           font-weight: bold;
         }
       }
-
     }
+    
 
     /* ------------------news - latest events MODAL------------------ */
     .news-content-cards-container {
@@ -525,11 +524,29 @@
 
             .modal-body {
               flex-direction: column;
+              .modal-body-first {
+                img{
+                  min-width: 100%;
+                }
+              }
             }
           }
         }
       }
     }
+  }
+  .news-container .news-content-cards-container .modal .modal-dialog .modal-content .modal-body .modal-body-second .modal-body-second-moreEvents-part .modal-body-second-moreEvents-part-title-cards .card,
+  .news-container .news-content-cards-container .modal .modal-dialog .modal-content .modal-body .modal-body-second .modal-body-second-moreEvents-part .modal-body-second-moreEvents-part-title-cards .card img,
+  .news-container .news-content-cards-container .modal .modal-dialog .modal-content .modal-body .modal-body-second .modal-body-second-moreEvents-part .modal-body-second-moreEvents-part-title-cards .card .card-title{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .news-container .news-content-cards-container .modal .modal-dialog .modal-content .modal-header{
+    padding: 16px;
+  }
+  .news-container .news-content-cards-container .modal .modal-dialog .modal-content .modal-body{
+    padding: 8px 16px;
   }
 }
 /* ------------------POLICY - policy issues------------------ */
@@ -541,6 +558,7 @@
   justify-content: center;
   align-items: center;
   gap: 64px;
+  background: var(--bg-01);
 
   .policy-title-part{
     display: flex;
@@ -554,10 +572,12 @@
     align-items: center;
     justify-content: center;
     gap: 64px;
+    margin-top: 60px;
   
     .card{
       border: none;
       cursor: pointer;
+      background: transparent;
       
       .card-title{
         color: var(--text-01);
@@ -599,8 +619,8 @@
             .modal-body-first{
               img {
                 width: 100%;
-                min-width: 350px;
-                height: 318px;
+                max-width: 507px;
+                height: 367px;
                 border-radius: 24px;
                 object-fit: cover;
               }
@@ -692,7 +712,7 @@
 
     .policy-body-part {
       flex-wrap: wrap;
-      gap: 24px;
+      gap: 64px;
       
       .card {
         flex: 1;
@@ -718,399 +738,455 @@
 
             .modal-body {
               flex-direction: column;
+              .modal-body-first {
+                img {
+                  max-width: 100%;
+                }
+              }
             }
           }
         }
       }
     }
-    .policy-body-part-md {
+    .policy-body-part-last {
       display: block;
       width: 100%;
+      margin-top: 64px;
+      
       .card{
         width: 50%;
         display: block;
       }
     }
+    .policy-body-part .modal .modal-dialog .modal-content .modal-body .modal-body-second .modal-body-second-moreEvents-part .modal-body-second-moreEvents-part-title-cards .card .card-title{
+      width: 100%;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .policy-container {
+    .policy-title-part {
+      .title {
+        font-size: 52px;
+      }
+    }
+
+    .policy-body-part {
+      flex-direction: column;
+      .modal .modal-dialog .modal-content {
+        .modal-header{
+          padding: 16px;
+        }
+        .modal-body{
+          padding: 8px 16px;
+        }
+      }
+    }
+    .policy-body-part-last {
+      width: fit-content;
+      margin: auto;
+      margin-top: 64px;
+
+      .card {
+        width: 100%;
+      }
+      
+    }
   }
 }
 /* ------------------CONTACT US - donate、email------------------ */
 .contactUs-container{
-  padding-top:104px; 
-  padding-bottom:104px; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 24px;
-
-  .contactUs-part{
-    max-width: 648px;
-    height: 596px;
-    padding: 96px;
-    border-radius: 32px;
+  .container{
+    padding-top:104px; 
+    padding-bottom:104px; 
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
-    &:nth-child(1) {
-      background: var(--brown);
-    }
-    &:nth-child(2) {
-      background: var(--gray-700);
-    }
-
-    .contactUs-part-text-title{
-      color: #fff;
-      font-family: var(--ff-mantouSans);
-      font-size: 52px;
-      padding-bottom: 16px;
-    }
-    .contactUs-part-text-p{
-      color: #fff;
-      font-weight: bold
-    }
-    .contactUs-part-trigger-part{
-      height: 230px;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    background: var(--bg-01);
+  
+    .contactUs-part{
+      max-width: 648px;
+      height: 596px;
+      padding: 90px;
+      border-radius: 32px;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      button{
-        border: none;
-        padding: 20px 24px;
-        text-wrap: nowrap;
+      flex-direction: column;
+      justify-content: space-around;
+  
+      &:nth-child(1) {
+        background: var(--brown);
       }
-
-      /* MODAL */
-      .modal{
-        .modal-dialog{
-          max-width: 80%;
+      &:nth-child(2) {
+        background: var(--gray-700);
+      }
+  
+      .contactUs-part-text-title{
+        color: #fff;
+        font-family: var(--ff-mantouSans);
+        font-size: 52px;
+        padding-bottom: 16px;
+      }
+      .contactUs-part-text-p{
+        color: #fff;
+        font-weight: bold
+      }
+      .contactUs-part-trigger-part{
+        height: 230px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+  
+        .btn-brown{
+          border: none;
+          padding: 20px 24px;
+          text-wrap: nowrap;
         }
-        .modal-content{
-          border-radius: 24px;
-          
-          .modal-header{
-            border: none;
-            button{
-              background: none;
+  
+        /* MODAL */
+        .modal{
+          .modal-dialog{
+            max-width: 80%;
+          }
+          .modal-content{
+            border-radius: 24px;
+            
+            .modal-header{
+              border: none;
+              padding: 24px 48px;
+              button{
+                background: none;
+              }
             }
           }
         }
-      }
-
-      /* donate */
-      .modal-donate{
-        .modal-body {
+  
+        /* donate */
+        .modal-donate{
+          .modal-body {
+              padding: 8px 48px 48px 48px;
+              display: flex;
+              gap: 32px;
+          
+              .modal-body-text-part {
+                padding: 60px;
+                background: var(--bg-02);
+                border-radius: 24px;
+          
+                .modal-body-text-part-title {
+                  color: var(--brown);
+                  font-weight: bold;
+                }
+          
+                .modal-body-text-part-totalAmount {
+                  padding-top: 16px;
+          
+                  span {
+                    font-weight: bold;
+                  }
+                }
+          
+                .modal-body-text-part-img {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                }
+              }
+          
+              .modal-body-active-part {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                width: 100%;
+          
+                &.active {
+                  justify-content: center;
+                  align-items: center;
+                  gap: 32px;
+          
+                  img {
+                    width: 187px;
+                  }
+          
+                  .btns {
+                    width: 224px;
+                  }
+                }
+          
+                .modal-body-active-part-title {
+                  margin-bottom: 0;
+                }
+          
+                .donatePlan-btn {
+                  border: 2px solid var(--gray-200);
+                  background: #fff;
+                  border-radius: 16px;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  padding: 24px 16px;
+          
+                  &.active,
+                  :focus {
+                    outline: none;
+                    border: 2px solid var(--brown);
+                  }
+          
+                  .donatePlan-btn-title {
+                    color: var(--brown);
+                    font-weight: bold;
+                    margin-bottom: 0;
+                  }
+          
+                  .donatePlan-btn-info {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+          
+                    .donatePlan-btn-info-price {
+                      display: flex;
+                      gap: 8px;
+                      text-align: right;
+          
+                      .donatePlan-btn-info-price-currency {
+                        padding-left: 18.5px;
+                      }
+          
+                      .donatePlan-btn-info-price-num {
+                        font-weight: bold;
+                        text-align: right;
+                      }
+                    }
+          
+                    .donatePlan-btn-info-peopleAmount {
+                      width: 140px;
+                      text-align: right;
+                      padding-top: 8px;
+                      padding-bottom: 8px;
+                    }
+                  }
+                }
+          
+                /* Customize donate */
+                .donatePlan-btn-customize {
+                  flex-direction: column;
+                  justify-content: flex-start;
+                  align-items: flex-start;
+                  gap: 8px;
+                  padding: 16px;
+          
+                  .donatePlan-btn-customize-input {
+                    border-radius: 8px;
+                    background: var(--gray-100);
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    padding-left: 15px;
+          
+                    span {
+                      padding-right: 10px;
+                    }
+          
+                    input {
+                      padding-top: 17.5px;
+                      padding-bottom: 17.5px;
+                      background: none;
+                      border: none;
+                      width: 100%;
+                      color: var(--gray-500);
+                    }
+                  }
+                }
+          
+                /* donate btn */
+                .btns {
+                  width: 100%;
+                }
+              }
+            }
+        }
+  
+        /* email */
+        .modal-email{
+          .modal-body {
             padding: 8px 48px 48px 48px;
             display: flex;
             gap: 32px;
         
             .modal-body-text-part {
-              padding: 60px;
-              background: var(--bg-02);
+              background: #E3F8FF;
               border-radius: 24px;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
         
               .modal-body-text-part-title {
-                color: var(--brown);
                 font-weight: bold;
+                padding: 64px 60px 115px 60px;
               }
         
-              .modal-body-text-part-totalAmount {
-                padding-top: 16px;
-        
-                span {
-                  font-weight: bold;
-                }
-              }
-        
-              .modal-body-text-part-img {
-                display: flex;
-                justify-content: center;
-                align-items: center;
+              img {
+                max-width: 624px;
+                width: 100%;
               }
             }
         
-            .modal-body-active-part {
-              display: flex;
-              flex-direction: column;
-              gap: 16px;
+            .modal-body-active-part{
               width: 100%;
-        
+  
               &.active {
+                display: flex;
+                flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 gap: 32px;
-        
+            
                 img {
                   width: 187px;
                 }
-        
+            
                 .btns {
                   width: 224px;
                 }
               }
-        
-              .modal-body-active-part-title {
-                margin-bottom: 0;
-              }
-        
-              .donatePlan-btn {
-                border: 2px solid var(--gray-200);
-                background: #fff;
-                border-radius: 16px;
+  
+              ul{
                 display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 24px 16px;
-        
-                &.active,
-                :focus {
-                  outline: none;
-                  border: 2px solid var(--brown);
-                }
-        
-                .donatePlan-btn-title {
-                  color: var(--brown);
-                  font-weight: bold;
-                  margin-bottom: 0;
-                }
-        
-                .donatePlan-btn-info {
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-        
-                  .donatePlan-btn-info-price {
-                    display: flex;
-                    gap: 8px;
-                    text-align: right;
-        
-                    .donatePlan-btn-info-price-currency {
-                      padding-left: 18.5px;
-                    }
-        
-                    .donatePlan-btn-info-price-num {
-                      font-weight: bold;
-                      text-align: right;
-                    }
-                  }
-        
-                  .donatePlan-btn-info-peopleAmount {
-                    width: 140px;
-                    text-align: right;
-                    padding-top: 8px;
-                    padding-bottom: 8px;
-                  }
-                }
-              }
-        
-              /* Customize donate */
-              .donatePlan-btn-customize {
                 flex-direction: column;
-                justify-content: flex-start;
-                align-items: flex-start;
-                gap: 8px;
-                padding: 16px;
-        
-                .donatePlan-btn-customize-input {
-                  border-radius: 8px;
+                gap: 24px;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+          
+                .form-label {
+                  margin-bottom: 8px;
+                }
+    
+                input{
                   background: var(--gray-100);
-                  display: flex;
-                  align-items: center;
+                  border: none;
+                  padding: 16px 0 16px 15px;
+                  display: inline-block;
+                }
+                
+                textarea{
+                  background: var(--gray-100);
+                  border: none;
+                }
+    
+                /* submit btn */
+                .btns {
                   width: 100%;
-                  padding-left: 15px;
-        
-                  span {
-                    padding-right: 10px;
-                  }
-        
-                  input {
-                    padding-top: 17.5px;
-                    padding-bottom: 17.5px;
-                    background: none;
-                    border: none;
-                    width: 100%;
-                    color: var(--gray-500);
-                  }
                 }
               }
-        
-              /* donate btn */
-              .btns {
-                width: 100%;
-              }
             }
           }
+        }
       }
-
-      /* email */
-      .modal-email{
-        .modal-body {
-          padding: 8px 48px 48px 48px;
-          display: flex;
-          gap: 32px;
-      
-          .modal-body-text-part {
-            background: #E3F8FF;
-            border-radius: 24px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-      
-            .modal-body-text-part-title {
-              font-weight: bold;
-              padding: 64px 60px 115px 60px;
+    } 
+  }
+}
+@media screen and (max-width: 992px) {
+  .contactUs-container {
+    .container{
+      padding-top: 60px;
+      padding-bottom: 60px;
+      gap: 24px;
+  
+      .contactUs-part {
+        width: 100%;
+        height: 352px;
+        padding: 40px 24px;
+        border-radius: 32px;
+  
+        .contactUs-part-text-title {
+          font-size: 40px;
+        }
+  
+        .contactUs-part-trigger-part {
+          height: 100%;
+  
+          button {
+            text-wrap: nowrap;
+          }
+  
+          img {
+            max-width: 126px;
+          }
+  
+          /* MODAL */
+          .modal {
+            .modal-dialog {
+              max-width: 80%;
             }
-      
-            img {
-              max-width: 624px;
-              width: 100%;
+  
+            .modal-content {
+              border-radius: 24px;
+  
+              .modal-header {
+                padding: 16px;
+                .modal-title{
+                  font-size: 32px !important;
+                }
+              }
             }
           }
-      
-          .modal-body-active-part{
-            width: 100%;
-
-            &.active {
-              display: flex;
+  
+          /* donate */
+          .modal-donate {
+            .modal-body {
               flex-direction: column;
-              justify-content: center;
-              align-items: center;
-              gap: 32px;
-          
-              img {
-                width: 187px;
-              }
-          
-              .btns {
-                width: 224px;
+              padding: 8px 16px 16px 16px;
+  
+              .modal-body-text-part {
+                display: flex;
+                padding: 24px;
+  
+                .modal-body-text-part-title {
+                  font-size: 28px !important;
+                }
               }
             }
-
-            ul{
+          }
+  
+          /* email */
+          .modal-email {
+            .modal-body {
+              padding: 8px 16px 16px 16px;
               display: flex;
-              flex-direction: column;
               gap: 24px;
-              width: 100%;
-              margin: 0;
-              padding: 0;
-        
-              .form-label {
-                margin-bottom: 8px;
-              }
+              flex-direction: column;
   
-              input{
-                background: var(--gray-100);
-                border: none;
-                padding: 16px 0 16px 15px;
-                display: inline-block;
-              }
-              
-              textarea{
-                background: var(--gray-100);
-                border: none;
-              }
+              .modal-body-text-part {
+                flex-direction: row;
   
-              /* submit btn */
-              .btns {
-                width: 100%;
+                .modal-body-text-part-title {
+                  padding: 24px;
+                  font-size: 28px !important;
+                }
+                // div{
+                //   display: flex;
+                //   align-items: flex-end;
+                //   img{
+                //     flex: 1;
+                //     max-width: 206px;
+                //     width: 100%;
+                //   }
+                // }
               }
             }
           }
         }
       }
     }
-  } 
+  }
 }
-
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 768px) {
   .contactUs-container {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    gap: 24px;
-
-    .contactUs-part {
-      max-width: 100%;
-      height: 352px;
-      padding: 40px 24px;
-      border-radius: 32px;
-
-      .contactUs-part-text-title {
-        font-size: 40px;
-      }
-
-      .contactUs-part-trigger-part {
-        height: 100%;
-
-        button {
-          text-wrap: nowrap;
-        }
-
-        img {
-          width: 126px;
-        }
-
-        /* MODAL */
-        .modal {
-          .modal-dialog {
-            max-width: 80%;
-          }
-
-          .modal-content {
-            border-radius: 24px;
-
-            .modal-header {
-              .modal-title{
-                font-size: 32px !important;
-              }
-            }
-          }
-        }
-
-        /* donate */
-        .modal-donate {
-          .modal-body {
-            flex-direction: column;
-            padding: 8px 16px 16px 16px;
-
-            .modal-body-text-part {
-              display: flex;
-              padding: 24px;
-
-              .modal-body-text-part-title {
-                font-size: 28px !important;
-              }
-            }
-          }
-        }
-
-        /* email */
-        .modal-email {
-          .modal-body {
-            padding: 8px 16px 16px 16px;
-            display: flex;
-            gap: 24px;
-            flex-direction: column;
-
-            .modal-body-text-part {
-              flex-direction: row;
-
-              .modal-body-text-part-title {
-                padding: 24px;
-                font-size: 28px !important;
-              }
-              div{
-                display: flex;
-                align-items: flex-end;
-                img{
-                  flex: 1;
-                  max-width: 206px;
-                  width: 100%;
-                }
-              }
-            }
-          }
-        }
-      }
+    .container {
+      padding-top: 64px;
+      padding-bottom: 64px;
+      flex-direction: column;
     }
   }
 }
@@ -1118,6 +1194,8 @@
 /* ------------------BOTTOM BANNER - bottom slogan banner------------------*/
 .bottomBanner-container{
   padding: 104px 0;
+  background: var(--bg-01);
+
   .banner-content{
     display: flex;
     flex-direction: column;
@@ -1212,6 +1290,7 @@
           background: #fff;
           padding: 10px;
           border-radius: 50%;
+          cursor: pointer;
         }
       }
     }
@@ -1235,4 +1314,9 @@
       gap: 24px;
     }
   }
+}
+// 通用
+.modal.show{
+  display: flex !important;
+  justify-content: center !important;
 }

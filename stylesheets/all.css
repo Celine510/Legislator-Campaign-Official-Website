@@ -12059,8 +12059,10 @@ h6, .h6, .fs-6 {
 /* ------------------HEADER------------------ */
 .header-container {
   background: var(--bg-01);
-  opacity: 90%;
+  width: 100%;
+  z-index: 1;
   padding: 16px 24px;
+  position: fixed;
 }
 .header-container header {
   display: flex;
@@ -12095,6 +12097,7 @@ h6, .h6, .fs-6 {
 .header-container .header-nav ul li {
   padding: 8px;
   font-weight: 600;
+  text-wrap: nowrap;
 }
 .header-container .header-icon {
   display: flex;
@@ -12103,8 +12106,7 @@ h6, .h6, .fs-6 {
 
 @media screen and (max-width: 992px) {
   .header-container {
-    position: fixed;
-    width: 100%;
+    position: relative;
   }
   .header-container .header-nav {
     display: none;
@@ -12127,7 +12129,7 @@ h6, .h6, .fs-6 {
   font-size: 96px !important;
   line-height: 105%;
   letter-spacing: 2px;
-  padding-top: 96px;
+  padding-top: 203px;
 }
 .banner-container .banner-content h1:nth-child(2), .banner-container .banner-content .h1:nth-child(2) {
   display: none;
@@ -12177,6 +12179,7 @@ h6, .h6, .fs-6 {
   .banner-container .banner-content h1, .banner-container .banner-content .h1 {
     font-size: 52px !important;
     text-align: center;
+    padding-top: 48px;
   }
   .banner-container .banner-content h1:nth-child(1), .banner-container .banner-content .h1:nth-child(1) {
     display: none;
@@ -12185,6 +12188,7 @@ h6, .h6, .fs-6 {
     display: flex;
   }
   .banner-container .banner-content .banner-content-intro {
+    flex-direction: column;
     gap: 4px;
   }
   .banner-container .banner-content .banner-content-intro h3.banner-content-intro-tag, .banner-container .banner-content .banner-content-intro .banner-content-intro-tag.h3 {
@@ -12204,25 +12208,23 @@ h6, .h6, .fs-6 {
 .slogan-container {
   background: var(--brown);
 }
-.slogan-container ul {
+.slogan-container .ticker {
+  overflow-x: hidden;
+  white-space: nowrap;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   padding-left: 0;
   margin-bottom: 0;
+  gap: 24px;
 }
-.slogan-container ul li {
+.slogan-container .ticker span {
+  font-size: 64px;
   font-family: var(--ff-mantouSans);
   color: #fff;
-  word-wrap: wrap;
+  text-wrap: nowrap;
 }
 
-@media screen and (max-width: 992px) {
-  .slogan-container ul li {
-    text-wrap: nowrap;
-    overflow-x: hidden;
-  }
-}
 /* ------------------PROPOSITION------------------ */
 .proposition-container {
   background: var(--bg-02);
@@ -12505,6 +12507,22 @@ h6, .h6, .fs-6 {
   .news-container .news-content-cards-container .modal .modal-dialog .modal-content .modal-body {
     flex-direction: column;
   }
+  .news-container .news-content-cards-container .modal .modal-dialog .modal-content .modal-body .modal-body-first img {
+    min-width: 100%;
+  }
+  .news-container .news-content-cards-container .modal .modal-dialog .modal-content .modal-body .modal-body-second .modal-body-second-moreEvents-part .modal-body-second-moreEvents-part-title-cards .card,
+  .news-container .news-content-cards-container .modal .modal-dialog .modal-content .modal-body .modal-body-second .modal-body-second-moreEvents-part .modal-body-second-moreEvents-part-title-cards .card img,
+  .news-container .news-content-cards-container .modal .modal-dialog .modal-content .modal-body .modal-body-second .modal-body-second-moreEvents-part .modal-body-second-moreEvents-part-title-cards .card .card-title {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .news-container .news-content-cards-container .modal .modal-dialog .modal-content .modal-header {
+    padding: 16px;
+  }
+  .news-container .news-content-cards-container .modal .modal-dialog .modal-content .modal-body {
+    padding: 8px 16px;
+  }
 }
 /* ------------------POLICY - policy issues------------------ */
 .policy-container {
@@ -12515,6 +12533,7 @@ h6, .h6, .fs-6 {
   justify-content: center;
   align-items: center;
   gap: 64px;
+  background: var(--bg-01);
 }
 .policy-container .policy-title-part {
   display: flex;
@@ -12527,11 +12546,13 @@ h6, .h6, .fs-6 {
   align-items: center;
   justify-content: center;
   gap: 64px;
+  margin-top: 60px;
   /* modal */
 }
 .policy-container .policy-body-part .card {
   border: none;
   cursor: pointer;
+  background: transparent;
 }
 .policy-container .policy-body-part .card .card-title {
   color: var(--text-01);
@@ -12566,8 +12587,8 @@ h6, .h6, .fs-6 {
 }
 .policy-container .policy-body-part .modal .modal-dialog .modal-content .modal-body .modal-body-first img {
   width: 100%;
-  min-width: 350px;
-  height: 318px;
+  max-width: 507px;
+  height: 367px;
   border-radius: 24px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -12639,7 +12660,7 @@ h6, .h6, .fs-6 {
   }
   .policy-container .policy-body-part {
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 64px;
     /* modal */
   }
   .policy-container .policy-body-part .card {
@@ -12662,50 +12683,81 @@ h6, .h6, .fs-6 {
   .policy-container .policy-body-part .modal .modal-dialog .modal-content .modal-body {
     flex-direction: column;
   }
-  .policy-container .policy-body-part-md {
+  .policy-container .policy-body-part .modal .modal-dialog .modal-content .modal-body .modal-body-first img {
+    max-width: 100%;
+  }
+  .policy-container .policy-body-part-last {
     display: block;
     width: 100%;
+    margin-top: 64px;
   }
-  .policy-container .policy-body-part-md .card {
+  .policy-container .policy-body-part-last .card {
     width: 50%;
     display: block;
   }
+  .policy-container .policy-body-part .modal .modal-dialog .modal-content .modal-body .modal-body-second .modal-body-second-moreEvents-part .modal-body-second-moreEvents-part-title-cards .card .card-title {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .policy-container .policy-title-part .title {
+    font-size: 52px;
+  }
+  .policy-container .policy-body-part {
+    flex-direction: column;
+  }
+  .policy-container .policy-body-part .modal .modal-dialog .modal-content .modal-header {
+    padding: 16px;
+  }
+  .policy-container .policy-body-part .modal .modal-dialog .modal-content .modal-body {
+    padding: 8px 16px;
+  }
+  .policy-container .policy-body-part-last {
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: auto;
+    margin-top: 64px;
+  }
+  .policy-container .policy-body-part-last .card {
+    width: 100%;
+  }
 }
 /* ------------------CONTACT US - donate、email------------------ */
-.contactUs-container {
+.contactUs-container .container {
   padding-top: 104px;
   padding-bottom: 104px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 24px;
+  background: var(--bg-01);
 }
-.contactUs-container .contactUs-part {
+.contactUs-container .container .contactUs-part {
   max-width: 648px;
   height: 596px;
-  padding: 96px;
+  padding: 90px;
   border-radius: 32px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
-.contactUs-container .contactUs-part:nth-child(1) {
+.contactUs-container .container .contactUs-part:nth-child(1) {
   background: var(--brown);
 }
-.contactUs-container .contactUs-part:nth-child(2) {
+.contactUs-container .container .contactUs-part:nth-child(2) {
   background: var(--gray-700);
 }
-.contactUs-container .contactUs-part .contactUs-part-text-title {
+.contactUs-container .container .contactUs-part .contactUs-part-text-title {
   color: #fff;
   font-family: var(--ff-mantouSans);
   font-size: 52px;
   padding-bottom: 16px;
 }
-.contactUs-container .contactUs-part .contactUs-part-text-p {
+.contactUs-container .container .contactUs-part .contactUs-part-text-p {
   color: #fff;
   font-weight: bold;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part {
   height: 230px;
   display: flex;
   align-items: center;
@@ -12714,49 +12766,50 @@ h6, .h6, .fs-6 {
   /* donate */
   /* email */
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part button {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .btn-brown {
   border: none;
   padding: 20px 24px;
   text-wrap: nowrap;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal .modal-dialog {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal .modal-dialog {
   max-width: 80%;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal .modal-content {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal .modal-content {
   border-radius: 24px;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal .modal-content .modal-header {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal .modal-content .modal-header {
   border: none;
+  padding: 24px 48px;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal .modal-content .modal-header button {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal .modal-content .modal-header button {
   background: none;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body {
   padding: 8px 48px 48px 48px;
   display: flex;
   gap: 32px;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-text-part {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-text-part {
   padding: 60px;
   background: var(--bg-02);
   border-radius: 24px;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-text-part .modal-body-text-part-title {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-text-part .modal-body-text-part-title {
   color: var(--brown);
   font-weight: bold;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-text-part .modal-body-text-part-totalAmount {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-text-part .modal-body-text-part-totalAmount {
   padding-top: 16px;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-text-part .modal-body-text-part-totalAmount span {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-text-part .modal-body-text-part-totalAmount span {
   font-weight: bold;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-text-part .modal-body-text-part-img {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-text-part .modal-body-text-part-img {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -12764,21 +12817,21 @@ h6, .h6, .fs-6 {
   /* Customize donate */
   /* donate btn */
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part.active {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part.active {
   justify-content: center;
   align-items: center;
   gap: 32px;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part.active img {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part.active img {
   width: 187px;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part.active .btns {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part.active .btns {
   width: 224px;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .modal-body-active-part-title {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .modal-body-active-part-title {
   margin-bottom: 0;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn {
   border: 2px solid var(--gray-200);
   background: #fff;
   border-radius: 16px;
@@ -12787,47 +12840,47 @@ h6, .h6, .fs-6 {
   align-items: center;
   padding: 24px 16px;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn.active,
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn :focus {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn.active,
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn :focus {
   outline: none;
   border: 2px solid var(--brown);
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn .donatePlan-btn-title {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn .donatePlan-btn-title {
   color: var(--brown);
   font-weight: bold;
   margin-bottom: 0;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn .donatePlan-btn-info {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn .donatePlan-btn-info {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn .donatePlan-btn-info .donatePlan-btn-info-price {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn .donatePlan-btn-info .donatePlan-btn-info-price {
   display: flex;
   gap: 8px;
   text-align: right;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn .donatePlan-btn-info .donatePlan-btn-info-price .donatePlan-btn-info-price-currency {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn .donatePlan-btn-info .donatePlan-btn-info-price .donatePlan-btn-info-price-currency {
   padding-left: 18.5px;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn .donatePlan-btn-info .donatePlan-btn-info-price .donatePlan-btn-info-price-num {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn .donatePlan-btn-info .donatePlan-btn-info-price .donatePlan-btn-info-price-num {
   font-weight: bold;
   text-align: right;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn .donatePlan-btn-info .donatePlan-btn-info-peopleAmount {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn .donatePlan-btn-info .donatePlan-btn-info-peopleAmount {
   width: 140px;
   text-align: right;
   padding-top: 8px;
   padding-bottom: 8px;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn-customize {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn-customize {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 8px;
   padding: 16px;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn-customize .donatePlan-btn-customize-input {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn-customize .donatePlan-btn-customize-input {
   border-radius: 8px;
   background: var(--gray-100);
   display: flex;
@@ -12835,10 +12888,10 @@ h6, .h6, .fs-6 {
   width: 100%;
   padding-left: 15px;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn-customize .donatePlan-btn-customize-input span {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn-customize .donatePlan-btn-customize-input span {
   padding-right: 10px;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn-customize .donatePlan-btn-customize-input input {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn-customize .donatePlan-btn-customize-input input {
   padding-top: 17.5px;
   padding-bottom: 17.5px;
   background: none;
@@ -12846,46 +12899,46 @@ h6, .h6, .fs-6 {
   width: 100%;
   color: var(--gray-500);
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .btns {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .btns {
   width: 100%;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body {
   padding: 8px 48px 48px 48px;
   display: flex;
   gap: 32px;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-text-part {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-text-part {
   background: #E3F8FF;
   border-radius: 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-text-part .modal-body-text-part-title {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-text-part .modal-body-text-part-title {
   font-weight: bold;
   padding: 64px 60px 115px 60px;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-text-part img {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-text-part img {
   max-width: 624px;
   width: 100%;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-active-part {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-active-part {
   width: 100%;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-active-part.active {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-active-part.active {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 32px;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-active-part.active img {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-active-part.active img {
   width: 187px;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-active-part.active .btns {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-active-part.active .btns {
   width: 224px;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-active-part ul {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-active-part ul {
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -12894,96 +12947,98 @@ h6, .h6, .fs-6 {
   padding: 0;
   /* submit btn */
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-active-part ul .form-label {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-active-part ul .form-label {
   margin-bottom: 8px;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-active-part ul input {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-active-part ul input {
   background: var(--gray-100);
   border: none;
   padding: 16px 0 16px 15px;
   display: inline-block;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-active-part ul textarea {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-active-part ul textarea {
   background: var(--gray-100);
   border: none;
 }
-.contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-active-part ul .btns {
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-active-part ul .btns {
   width: 100%;
 }
 
 @media screen and (max-width: 992px) {
-  .contactUs-container {
+  .contactUs-container .container {
     padding-top: 60px;
     padding-bottom: 60px;
     gap: 24px;
   }
-  .contactUs-container .contactUs-part {
-    max-width: 100%;
+  .contactUs-container .container .contactUs-part {
+    width: 100%;
     height: 352px;
     padding: 40px 24px;
     border-radius: 32px;
   }
-  .contactUs-container .contactUs-part .contactUs-part-text-title {
+  .contactUs-container .container .contactUs-part .contactUs-part-text-title {
     font-size: 40px;
   }
-  .contactUs-container .contactUs-part .contactUs-part-trigger-part {
+  .contactUs-container .container .contactUs-part .contactUs-part-trigger-part {
     height: 100%;
     /* MODAL */
     /* donate */
     /* email */
   }
-  .contactUs-container .contactUs-part .contactUs-part-trigger-part button {
+  .contactUs-container .container .contactUs-part .contactUs-part-trigger-part button {
     text-wrap: nowrap;
   }
-  .contactUs-container .contactUs-part .contactUs-part-trigger-part img {
-    width: 126px;
+  .contactUs-container .container .contactUs-part .contactUs-part-trigger-part img {
+    max-width: 126px;
   }
-  .contactUs-container .contactUs-part .contactUs-part-trigger-part .modal .modal-dialog {
+  .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal .modal-dialog {
     max-width: 80%;
   }
-  .contactUs-container .contactUs-part .contactUs-part-trigger-part .modal .modal-content {
+  .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal .modal-content {
     border-radius: 24px;
   }
-  .contactUs-container .contactUs-part .contactUs-part-trigger-part .modal .modal-content .modal-header .modal-title {
+  .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal .modal-content .modal-header {
+    padding: 16px;
+  }
+  .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal .modal-content .modal-header .modal-title {
     font-size: 32px !important;
   }
-  .contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body {
+  .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body {
     flex-direction: column;
     padding: 8px 16px 16px 16px;
   }
-  .contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-text-part {
+  .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-text-part {
     display: flex;
     padding: 24px;
   }
-  .contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-text-part .modal-body-text-part-title {
+  .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-text-part .modal-body-text-part-title {
     font-size: 28px !important;
   }
-  .contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body {
+  .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body {
     padding: 8px 16px 16px 16px;
     display: flex;
     gap: 24px;
     flex-direction: column;
   }
-  .contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-text-part {
+  .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-text-part {
     flex-direction: row;
   }
-  .contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-text-part .modal-body-text-part-title {
+  .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-text-part .modal-body-text-part-title {
     padding: 24px;
     font-size: 28px !important;
   }
-  .contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-text-part div {
-    display: flex;
-    align-items: flex-end;
-  }
-  .contactUs-container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-text-part div img {
-    flex: 1;
-    max-width: 206px;
-    width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .contactUs-container .container {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    flex-direction: column;
   }
 }
 /* ------------------BOTTOM BANNER - bottom slogan banner------------------*/
 .bottomBanner-container {
   padding: 104px 0;
+  background: var(--bg-01);
 }
 .bottomBanner-container .banner-content {
   display: flex;
@@ -13071,6 +13126,7 @@ h6, .h6, .fs-6 {
   background: #fff;
   padding: 10px;
   border-radius: 50%;
+  cursor: pointer;
 }
 .footer-container .footer-info .footer-info-second-part {
   display: flex;
@@ -13088,6 +13144,11 @@ h6, .h6, .fs-6 {
     gap: 24px;
   }
 }
+.modal.show {
+  display: flex !important;
+  justify-content: center !important;
+}
+
 .tag {
   padding: 12px 16px;
   color: #fff;
@@ -13122,6 +13183,7 @@ h6, .h6, .fs-6 {
 .btns p {
   margin-bottom: 0;
   font-weight: bold;
+  text-wrap: nowrap;
 }
 
 .btns svg {

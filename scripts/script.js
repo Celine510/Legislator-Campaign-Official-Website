@@ -152,14 +152,14 @@ function email(){
 };
 
 // footer - copyright's year
-function copyright(){
-  copyrightPart.textContent = `© ${new Date().getFullYear()} 喵立翰 Miao Li-Han 版權所有`;
-}
+// function copyright(){
+//   copyrightPart.textContent = `© ${new Date().getFullYear()} 喵立翰 Miao Li-Han 版權所有`;
+// }
 
 function render(){
   donate();
   email();
-  copyright();
+  // copyright();
 }
 
 render();
