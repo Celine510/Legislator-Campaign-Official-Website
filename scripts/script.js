@@ -89,7 +89,7 @@ function donate(){
     modalBodyActivePart[0].innerHTML = `
     <div class="fs-3 fw-bold">感謝您的捐款</div>
     <img src="img/Group 15.png" alt="">
-    <button class="btns btn-gray" data-bs-dismiss="modal" id="close">
+    <button class="btns btn-gray border-0" data-bs-dismiss="modal" id="close">
       <p class="h6">關閉</p>
     </button>`;
     const close = document.querySelector('#close');
@@ -140,7 +140,7 @@ function email(){
     modalBodyActivePart[1].innerHTML = `
       <div class="fs-3 fw-bold">感謝您的意見</div>
       <img src="img/Group 15.png" alt="">
-      <button class="btns btn-gray" data-bs-dismiss="modal" id="close">
+      <button class="btns btn-gray border-0" data-bs-dismiss="modal" id="close">
         <p class="h6">關閉</p>
       </button>`;
     const close = document.querySelector('#close');

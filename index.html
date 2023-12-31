@@ -140,9 +140,7 @@
     </div>
     <div class="news-content">
       <a class="news-content-card-hl card" data-bs-toggle="modal" data-bs-target="#newsModal-03">
-        <div class="card-hl-img">
-          <img alt="">
-        </div>
+        <div class="card-hl-img"></div>
         <div class="card-body">
           <p class="card-time fs-s-14">2023/12/26</p>
           <p class="card-title fw-bold h5">參與台北寵物論壇，爭取貓咪友善環境</p>
@@ -896,190 +894,196 @@
   <!-- contactUs - donate、email -->
   <section class="contactUs-container">
     <div class="container">
-      <!-- donate -->
-      <div class="contactUs-part">
-        <div class="contactUs-part-text-part">
-          <div class="contactUs-part-text-title">小額支持喵喵</div>
-          <p class="contactUs-part-text-p fs-5">您的小筆捐款，是每隻毛孩未來的大大動力！</p>
-        </div>
-        <div class="contactUs-part-trigger-part">
-          <!-- donate - Button trigger modal -->
-          <button class="btns btn-white border-0" data-bs-toggle="modal" data-bs-target="#donateModal">
-            <p class="h6">小額捐款</p>
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M11 0.3125L21.6875 11L11 21.6875L9.125 19.8125L16.5625 12.3125H0.3125V9.6875H16.5625L9.125 2.1875L11 0.3125Z"
-                fill="#334155" />
-            </svg>
-          </button>
-          <!-- donate - Modal -->
-          <div class="modal-donate modal fade" id="donateModal" tabindex="-1" aria-labelledby="donateModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <div class="modal-title fs-4 fw-bold" id="ModalLabel">小額捐款</div>
-                  <button data-bs-dismiss="modal" aria-label="Close">
-                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M20.6875 18.8125L15.875 14L20.6875 9.1875L18.8125 7.3125L14 12.125L9.1875 7.3125L7.3125 9.1875L12.125 14L7.3125 18.8125L9.1875 20.6875L14 15.875L18.8125 20.6875L20.6875 18.8125ZM4.5625 4.625C7.1875 2 10.3333 0.6875 14 0.6875C17.6667 0.6875 20.7917 2 23.375 4.625C26 7.20833 27.3125 10.3333 27.3125 14C27.3125 17.6667 26 20.8125 23.375 23.4375C20.7917 26.0208 17.6667 27.3125 14 27.3125C10.3333 27.3125 7.1875 26.0208 4.5625 23.4375C1.97917 20.8125 0.6875 17.6667 0.6875 14C0.6875 10.3333 1.97917 7.20833 4.5625 4.625Z"
-                        fill="#334155" />
-                    </svg>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <div class="modal-body-text-part">
-                    <div>
-                      <div class="modal-body-text-part-title fs-1">您的小筆捐款<br>是每隻毛孩未來的大大動力！</div>
-                      <div class="modal-body-text-part-totalAmount">
-                        目前小額贊助總金額<br>
-                        <span class="fs-2">987,655,873</span>
-                      </div>
-                    </div>
-                    <div class="modal-body-text-part-img">
-                      <img src="img/image 11.png" alt="">
-                    </div>
-                  </div>
-                  <!-- JS conduct -->
-                  <div class="modal-body-active-part">
-                    <!-- reserved incase JS file broke -->
-                    <p class="modal-body-active-part-title fs-5 fw-bold">捐款方案</p>
-                    <!-- program 1 -->
-                    <button class="donatePlan-btn active">
-                      <p class="donatePlan-btn-title fs-5">喵星人之友</p>
-                      <div class="donatePlan-btn-info">
-                        <div class="donatePlan-btn-info-price">
-                          <div class="donatePlan-btn-info-price-currency">
-                            NT$
-                          </div>
-                          <div class="donatePlan-btn-info-price-num">
-                            600
-                          </div>
-                        </div>
-                        <div class="donatePlan-btn-info-peopleAmount fs-s-14">已有 9,957 人贊助</div>
-                      </div>
-                    </button>
-                    <!-- program 2 -->
-                    <button class="donatePlan-btn">
-                      <p class="donatePlan-btn-title fs-5">喵星大使</p>
-                      <div class="donatePlan-btn-info">
-                        <div class="donatePlan-btn-info-price">
-                          <div class="donatePlan-btn-info-price-currency">
-                            NT$
-                          </div>
-                          <div class="donatePlan-btn-info-price-num">
-                            6,000
-                          </div>
-                        </div>
-                        <div class="donatePlan-btn-info-peopleAmount fs-s-14">已有 2,000 人贊助</div>
-                      </div>
-                    </button>
-                    <!-- program 3 -->
-                    <button class="donatePlan-btn">
-                      <p class="donatePlan-btn-title fs-5">喵星傳奇</p>
-                      <div class="donatePlan-btn-info">
-                        <div class="donatePlan-btn-info-price">
-                          <div class="donatePlan-btn-info-price-currency">
-                            NT$
-                          </div>
-                          <div class="donatePlan-btn-info-price-num">
-                            600,00
-                          </div>
-                        </div>
-                        <div class="donatePlan-btn-info-peopleAmount fs-s-14">已有 999 人贊助</div>
-                      </div>
-                    </button>
-                    <!-- program 4 - Customize donate -->
-                    <button class="donatePlan-btn donatePlan-btn-customize">
-                      <p class="donatePlan-btn-title donatePlan-btn-customize-title fs-5">自訂贊助金額</p>
-                      <div class="donatePlan-btn-customize-input">
-                        <span>NT$</span>
-                        <input type="text" name="" id="" placeholder="輸入金額">
-                      </div>
-                    </button>
-                    <!-- donate btn -->
-                    <button class="btns btn-brown" id="btn-donatePayment">
-                      <p class="h6">前往捐款</p>
-                    </button>
-                  </div>
-                </div>
-              </div>
+      <div class="row g-5 w-100">
+        <div class="col col-md-6">
+          <!-- donate -->
+          <div class="contactUs-part contactUs-donate row">
+            <div class="contactUs-part-text-part col">
+              <div class="contactUs-part-text-title">小額支持喵喵</div>
+              <p class="contactUs-part-text-p fs-5">您的小筆捐款，是每隻毛孩未來的大大動力！</p>
             </div>
-          </div>
-          <img src="img/image 11.png" alt="">
-        </div>
-      </div>
-      <!-- email -->
-      <div class="contactUs-part">
-        <div class="contactUs-part-text-part">
-          <div class="contactUs-part-text-title">民眾服務信箱</div>
-          <p class="contactUs-part-text-p fs-5">親愛的鄉親，每一位市民的意見都是我們社區前進的原動力</p>
-        </div>
-        <div class="contactUs-part-trigger-part">
-          <!-- email - Button trigger modal -->
-          <button class="btns btn-white border-0" data-bs-toggle="modal" data-bs-target="#emailModal">
-            <p class="h6">填寫表單</p>
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M11 0.3125L21.6875 11L11 21.6875L9.125 19.8125L16.5625 12.3125H0.3125V9.6875H16.5625L9.125 2.1875L11 0.3125Z"
-                fill="#334155" />
-            </svg>
-          </button>
-          <!-- email - Modal -->
-          <div class="modal-email modal fade" id="emailModal" tabindex="-1" aria-labelledby="emailModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <div class="modal-title fs-4 fw-bold" id="ModalLabel">民眾服務信箱</div>
-                  <button data-bs-dismiss="modal" aria-label="Close" class="border-0">
-                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M20.6875 18.8125L15.875 14L20.6875 9.1875L18.8125 7.3125L14 12.125L9.1875 7.3125L7.3125 9.1875L12.125 14L7.3125 18.8125L9.1875 20.6875L14 15.875L18.8125 20.6875L20.6875 18.8125ZM4.5625 4.625C7.1875 2 10.3333 0.6875 14 0.6875C17.6667 0.6875 20.7917 2 23.375 4.625C26 7.20833 27.3125 10.3333 27.3125 14C27.3125 17.6667 26 20.8125 23.375 23.4375C20.7917 26.0208 17.6667 27.3125 14 27.3125C10.3333 27.3125 7.1875 26.0208 4.5625 23.4375C1.97917 20.8125 0.6875 17.6667 0.6875 14C0.6875 10.3333 1.97917 7.20833 4.5625 4.625Z"
-                        fill="#334155" />
-                    </svg>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <div class="modal-body-text-part">
-                    <div class="modal-body-text-part-title fs-1">分享您的想法<br>一同為我們的未來打造更美好！</div>
-                    <div>
-                      <img src="img/image 10.png" alt="">
+            <div class="contactUs-part-trigger-part col">
+              <!-- donate - Button trigger modal -->
+              <button class="btns btn-white border-0" data-bs-toggle="modal" data-bs-target="#donateModal">
+                <p class="h6">小額捐款</p>
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M11 0.3125L21.6875 11L11 21.6875L9.125 19.8125L16.5625 12.3125H0.3125V9.6875H16.5625L9.125 2.1875L11 0.3125Z"
+                    fill="#334155" />
+                </svg>
+              </button>
+              <!-- donate - Modal -->
+              <div class="modal-donate modal fade" id="donateModal" tabindex="-1" aria-labelledby="donateModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <div class="modal-title fs-4 fw-bold" id="ModalLabel">小額捐款</div>
+                      <button class="border-0" data-bs-dismiss="modal" aria-label="Close">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M20.6875 18.8125L15.875 14L20.6875 9.1875L18.8125 7.3125L14 12.125L9.1875 7.3125L7.3125 9.1875L12.125 14L7.3125 18.8125L9.1875 20.6875L14 15.875L18.8125 20.6875L20.6875 18.8125ZM4.5625 4.625C7.1875 2 10.3333 0.6875 14 0.6875C17.6667 0.6875 20.7917 2 23.375 4.625C26 7.20833 27.3125 10.3333 27.3125 14C27.3125 17.6667 26 20.8125 23.375 23.4375C20.7917 26.0208 17.6667 27.3125 14 27.3125C10.3333 27.3125 7.1875 26.0208 4.5625 23.4375C1.97917 20.8125 0.6875 17.6667 0.6875 14C0.6875 10.3333 1.97917 7.20833 4.5625 4.625Z"
+                            fill="#334155" />
+                        </svg>
+                      </button>
                     </div>
-                  </div>
-                  <!-- JS conduct -->
-                  <form class="modal-body-active-part" id="contactUsEmail">
-                    <!-- reserved incase JS file broke -->
-                    <ul>
-                      <li>
-                        <label for="inputname" class="form-label fw-bold">您的姓名</label>
-                        <input type="text" id="inputname" class="form-control fs-m-16" placeholder="姓名">
-                      </li>
-                      <li>
-                        <label for="inputemail" class="form-label fw-bold">Email</label>
-                        <input type="text" id="inputemail" class="form-control fs-m-16" placeholder="email">
-                      </li>
-                      <li>
-                        <label for="inputphone" class="form-label fw-bold">手機</label>
-                        <input type="text" id="inputphone" class="form-control fs-m-16" placeholder="手機號碼">
-                      </li>
-                      <li>
-                        <label for="inputmsg" class="form-label fw-bold">您的建言</label>
-                        <!-- <input type="text" id="inputmsg" class="form-control fs-m-16" placeholder="輸入內容"> -->
-                        <textarea name="inputmsg" id="inputmsg" class="form-control fs-m-16" cols="30" rows="6"
-                          placeholder="輸入內容"></textarea>
-                      </li>
-                      <!-- submit btn -->
-                      <li>
-                        <button class="btns btn-brown" type="submit" id="btn-submitForm">
-                          <p class="h6">送出意見</p>
+                    <div class="modal-body">
+                      <div class="modal-body-text-part">
+                        <div>
+                          <div class="modal-body-text-part-title fs-1">您的小筆捐款<br>是每隻毛孩未來的大大動力！</div>
+                          <div class="modal-body-text-part-totalAmount">
+                            目前小額贊助總金額<br>
+                            <span class="fs-2">987,655,873</span>
+                          </div>
+                        </div>
+                        <div class="modal-body-text-part-img">
+                          <img src="img/image 11.png" alt="">
+                        </div>
+                      </div>
+                      <!-- JS conduct -->
+                      <div class="modal-body-active-part">
+                        <!-- reserved incase JS file broke -->
+                        <p class="modal-body-active-part-title fs-5 fw-bold">捐款方案</p>
+                        <!-- program 1 -->
+                        <button class="donatePlan-btn active">
+                          <p class="donatePlan-btn-title fs-5">喵星人之友</p>
+                          <div class="donatePlan-btn-info">
+                            <div class="donatePlan-btn-info-price">
+                              <div class="donatePlan-btn-info-price-currency">
+                                NT$
+                              </div>
+                              <div class="donatePlan-btn-info-price-num">
+                                600
+                              </div>
+                            </div>
+                            <div class="donatePlan-btn-info-peopleAmount fs-s-14">已有 9,957 人贊助</div>
+                          </div>
                         </button>
-                      </li>
-                    </ul>
-                  </form>
+                        <!-- program 2 -->
+                        <button class="donatePlan-btn">
+                          <p class="donatePlan-btn-title fs-5">喵星大使</p>
+                          <div class="donatePlan-btn-info">
+                            <div class="donatePlan-btn-info-price">
+                              <div class="donatePlan-btn-info-price-currency">
+                                NT$
+                              </div>
+                              <div class="donatePlan-btn-info-price-num">
+                                6,000
+                              </div>
+                            </div>
+                            <div class="donatePlan-btn-info-peopleAmount fs-s-14">已有 2,000 人贊助</div>
+                          </div>
+                        </button>
+                        <!-- program 3 -->
+                        <button class="donatePlan-btn">
+                          <p class="donatePlan-btn-title fs-5">喵星傳奇</p>
+                          <div class="donatePlan-btn-info">
+                            <div class="donatePlan-btn-info-price">
+                              <div class="donatePlan-btn-info-price-currency">
+                                NT$
+                              </div>
+                              <div class="donatePlan-btn-info-price-num">
+                                600,00
+                              </div>
+                            </div>
+                            <div class="donatePlan-btn-info-peopleAmount fs-s-14">已有 999 人贊助</div>
+                          </div>
+                        </button>
+                        <!-- program 4 - Customize donate -->
+                        <button class="donatePlan-btn donatePlan-btn-customize">
+                          <p class="donatePlan-btn-title donatePlan-btn-customize-title fs-5">自訂贊助金額</p>
+                          <div class="donatePlan-btn-customize-input">
+                            <span>NT$</span>
+                            <input type="text" name="" id="" placeholder="輸入金額">
+                          </div>
+                        </button>
+                        <!-- donate btn -->
+                        <button class="btns btn-brown" id="btn-donatePayment">
+                          <p class="h6">前往捐款</p>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
+              <img src="img/image 11.png" alt="">
             </div>
           </div>
-          <img src="img/image 14.png" alt="">
+        </div>
+        <div class="col col-md-6">
+          <!-- email -->
+          <div class="contactUs-part contactUs-email row">
+            <div class="contactUs-part-text-part col">
+              <div class="contactUs-part-text-title">民眾服務信箱</div>
+              <p class="contactUs-part-text-p fs-5">親愛的鄉親，每一位市民的意見都是我們社區前進的原動力</p>
+            </div>
+            <div class="contactUs-part-trigger-part col">
+              <!-- email - Button trigger modal -->
+              <button class="btns btn-white border-0" data-bs-toggle="modal" data-bs-target="#emailModal">
+                <p class="h6">填寫表單</p>
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M11 0.3125L21.6875 11L11 21.6875L9.125 19.8125L16.5625 12.3125H0.3125V9.6875H16.5625L9.125 2.1875L11 0.3125Z"
+                    fill="#334155" />
+                </svg>
+              </button>
+              <!-- email - Modal -->
+              <div class="modal-email modal fade" id="emailModal" tabindex="-1" aria-labelledby="emailModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <div class="modal-title fs-4 fw-bold" id="ModalLabel">民眾服務信箱</div>
+                      <button data-bs-dismiss="modal" aria-label="Close" class="border-0">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M20.6875 18.8125L15.875 14L20.6875 9.1875L18.8125 7.3125L14 12.125L9.1875 7.3125L7.3125 9.1875L12.125 14L7.3125 18.8125L9.1875 20.6875L14 15.875L18.8125 20.6875L20.6875 18.8125ZM4.5625 4.625C7.1875 2 10.3333 0.6875 14 0.6875C17.6667 0.6875 20.7917 2 23.375 4.625C26 7.20833 27.3125 10.3333 27.3125 14C27.3125 17.6667 26 20.8125 23.375 23.4375C20.7917 26.0208 17.6667 27.3125 14 27.3125C10.3333 27.3125 7.1875 26.0208 4.5625 23.4375C1.97917 20.8125 0.6875 17.6667 0.6875 14C0.6875 10.3333 1.97917 7.20833 4.5625 4.625Z"
+                            fill="#334155" />
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="modal-body-text-part">
+                        <div class="modal-body-text-part-title fs-1">分享您的想法<br>一同為我們的未來打造更美好！</div>
+                        <div class="d-flex align-items-end">
+                          <img src="img/image 10.png" alt="">
+                        </div>
+                      </div>
+                      <!-- JS conduct -->
+                      <form class="modal-body-active-part" id="contactUsEmail">
+                        <!-- reserved incase JS file broke -->
+                        <ul>
+                          <li>
+                            <label for="inputname" class="form-label fw-bold">您的姓名</label>
+                            <input type="text" id="inputname" class="form-control fs-m-16" placeholder="姓名">
+                          </li>
+                          <li>
+                            <label for="inputemail" class="form-label fw-bold">Email</label>
+                            <input type="text" id="inputemail" class="form-control fs-m-16" placeholder="email">
+                          </li>
+                          <li>
+                            <label for="inputphone" class="form-label fw-bold">手機</label>
+                            <input type="text" id="inputphone" class="form-control fs-m-16" placeholder="手機號碼">
+                          </li>
+                          <li>
+                            <label for="inputmsg" class="form-label fw-bold">您的建言</label>
+                            <!-- <input type="text" id="inputmsg" class="form-control fs-m-16" placeholder="輸入內容"> -->
+                            <textarea name="inputmsg" id="inputmsg" class="form-control fs-m-16" cols="30" rows="6"
+                              placeholder="輸入內容"></textarea>
+                          </li>
+                          <!-- submit btn -->
+                          <li>
+                            <button class="btns btn-brown" type="submit" id="btn-submitForm">
+                              <p class="h6">送出意見</p>
+                            </button>
+                          </li>
+                        </ul>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <img src="img/image 14.png" alt="">
+            </div>
+          </div>
         </div>
       </div>
     </div>

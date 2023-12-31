@@ -12190,6 +12190,7 @@ h6, .h6, .fs-6 {
   .banner-container .banner-content .banner-content-intro {
     flex-direction: column;
     gap: 4px;
+    padding: 16px 0;
   }
   .banner-container .banner-content .banner-content-intro h3.banner-content-intro-tag, .banner-container .banner-content .banner-content-intro .banner-content-intro-tag.h3 {
     text-wrap: nowrap;
@@ -12331,13 +12332,9 @@ h6, .h6, .fs-6 {
 .news-container .news-content .news-content-card-hl .card-hl-img {
   width: 100%;
   height: 407px;
-}
-.news-container .news-content .news-content-card-hl .card-hl-img img {
   background-image: url(../img/news-image\ 03.jpeg);
   background-size: cover;
   background-position: center;
-  width: 100%;
-  height: 100%;
   border-radius: 16px;
 }
 .news-container .news-content .news-content-card-hl .card-body {
@@ -12654,6 +12651,11 @@ h6, .h6, .fs-6 {
   margin-bottom: 0;
 }
 
+@media screen and (max-width: 1200px) {
+  .policy-container .policy-body-part .card .card-title {
+    height: 124px;
+  }
+}
 @media screen and (max-width: 992px) {
   .policy-container .policy-title-part .title {
     font-size: 52px;
@@ -12665,6 +12667,9 @@ h6, .h6, .fs-6 {
   }
   .policy-container .policy-body-part .card {
     flex: 1;
+  }
+  .policy-container .policy-body-part .card .card-title {
+    height: auto;
   }
   .policy-container .policy-body-part .modal .modal-dialog {
     max-width: 80%;
@@ -12729,22 +12734,20 @@ h6, .h6, .fs-6 {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
   background: var(--bg-01);
 }
 .contactUs-container .container .contactUs-part {
-  max-width: 648px;
   height: 596px;
-  padding: 90px;
+  padding: 45px;
   border-radius: 32px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
-.contactUs-container .container .contactUs-part:nth-child(1) {
+.contactUs-container .container .contactUs-part.contactUs-donate {
   background: var(--brown);
 }
-.contactUs-container .container .contactUs-part:nth-child(2) {
+.contactUs-container .container .contactUs-part.contactUs-email {
   background: var(--gray-700);
 }
 .contactUs-container .container .contactUs-part .contactUs-part-text-title {
@@ -12765,6 +12768,10 @@ h6, .h6, .fs-6 {
   /* MODAL */
   /* donate */
   /* email */
+}
+.contactUs-container .container .contactUs-part .contactUs-part-trigger-part img {
+  min-width: 150px;
+  max-width: 100%;
 }
 .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .btn-brown {
   border: none;
@@ -12964,75 +12971,84 @@ h6, .h6, .fs-6 {
   width: 100%;
 }
 
+@media screen and (max-width: 1200px) {
+  .contactUs-container .container .contactUs-part {
+    height: 496px;
+  }
+}
 @media screen and (max-width: 992px) {
   .contactUs-container .container {
     padding-top: 60px;
     padding-bottom: 60px;
-    gap: 24px;
   }
   .contactUs-container .container .contactUs-part {
-    width: 100%;
-    height: 352px;
+    height: 100%;
     padding: 40px 24px;
-    border-radius: 32px;
+    display: flex;
   }
   .contactUs-container .container .contactUs-part .contactUs-part-text-title {
     font-size: 40px;
   }
   .contactUs-container .container .contactUs-part .contactUs-part-trigger-part {
-    height: 100%;
     /* MODAL */
     /* donate */
     /* email */
   }
-  .contactUs-container .container .contactUs-part .contactUs-part-trigger-part button {
-    text-wrap: nowrap;
-  }
   .contactUs-container .container .contactUs-part .contactUs-part-trigger-part img {
-    max-width: 126px;
+    min-width: 100px;
   }
-  .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal .modal-dialog {
-    max-width: 80%;
-  }
-  .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal .modal-content {
-    border-radius: 24px;
+  .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .btn-brown {
+    border: none;
+    padding: 20px 24px;
+    text-wrap: nowrap;
   }
   .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal .modal-content .modal-header {
     padding: 16px;
   }
-  .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal .modal-content .modal-header .modal-title {
-    font-size: 32px !important;
-  }
   .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body {
+    padding: 8px 16px;
     flex-direction: column;
-    padding: 8px 16px 16px 16px;
+    gap: 24px;
   }
   .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-text-part {
+    padding: 32px 24px;
     display: flex;
-    padding: 24px;
   }
   .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-text-part .modal-body-text-part-title {
-    font-size: 28px !important;
+    font-size: 24px !important;
+  }
+  .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-text-part .modal-body-text-part-img {
+    width: 120px;
+  }
+  .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .modal-body-active-part-title {
+    margin-bottom: 0;
+  }
+  .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn .donatePlan-btn-info {
+    justify-content: space-between;
+    width: 100%;
+  }
+  .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-active-part .donatePlan-btn .donatePlan-btn-info .donatePlan-btn-info-price .donatePlan-btn-info-price-currency {
+    padding-left: 0;
   }
   .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body {
-    padding: 8px 16px 16px 16px;
-    display: flex;
-    gap: 24px;
+    padding: 8px 16px;
     flex-direction: column;
+    gap: 24px;
   }
   .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-text-part {
     flex-direction: row;
   }
   .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-text-part .modal-body-text-part-title {
-    padding: 24px;
-    font-size: 28px !important;
+    font-size: 24px !important;
+    padding: 24px 0 40px 24px;
   }
-}
-@media screen and (max-width: 768px) {
-  .contactUs-container .container {
-    padding-top: 64px;
-    padding-bottom: 64px;
-    flex-direction: column;
+  .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-text-part img {
+    width: 206.5px;
+    height: 147px;
   }
 }
 /* ------------------BOTTOM BANNER - bottom slogan banner------------------*/
