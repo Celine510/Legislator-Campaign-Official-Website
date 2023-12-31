@@ -1,4 +1,6 @@
 # Legislator Campaign Official Website
+github pages: https://celine510.github.io/Legislator-campaign-official-website/
+
 ## Technology 技術
 - HTML5
 - CSS3
