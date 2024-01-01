@@ -12612,6 +12612,9 @@ h6, .h6, .fs-6 {
   .policy-container .policy-body-part .card .card-title {
     height: auto;
   }
+  .policy-container .policy-body-part #policyModal-03-small {
+    margin-right: 32px;
+  }
   .policy-container .policy-body-part .modal .modal-dialog {
     max-width: 80%;
   }
@@ -12625,6 +12628,9 @@ h6, .h6, .fs-6 {
 @media screen and (max-width: 768px) {
   .policy-container .policy-body-part {
     flex-direction: column;
+  }
+  .policy-container .policy-body-part #policyModal-03-small {
+    margin-right: 0;
   }
   .policy-container .policy-body-part .modal .modal-dialog .modal-content .modal-header {
     padding: 16px;

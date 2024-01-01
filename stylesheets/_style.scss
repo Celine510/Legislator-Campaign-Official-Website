@@ -651,6 +651,10 @@
         }
       }
 
+      #policyModal-03-small{
+        margin-right: 32px;
+      }
+
       /* modal */
       .modal {
         .modal-dialog {
@@ -675,6 +679,10 @@
   .policy-container {
     .policy-body-part {
       flex-direction: column;
+
+      #policyModal-03-small {
+          margin-right: 0;
+        }
       .modal .modal-dialog .modal-content {
         .modal-header{
           padding: 16px;
