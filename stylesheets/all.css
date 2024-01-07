@@ -12220,6 +12220,11 @@ h6, .h6, .fs-6 {
   text-wrap: nowrap;
 }
 
+@media screen and (max-width: 992px) {
+  .slogan-container .ticker span {
+    font-size: 44px;
+  }
+}
 /* ------------------PROPOSITION------------------ */
 .proposition-container {
   background: var(--bg-02);
@@ -12457,11 +12462,17 @@ h6, .h6, .fs-6 {
   }
 }
 @media screen and (max-width: 768px) {
+  .news-container .news-content-cards-container img {
+    width: 100%;
+  }
   .news-container .news-content-cards-container .modal .modal-dialog .modal-content .modal-header {
     padding: 16px;
   }
   .news-container .news-content-cards-container .modal .modal-dialog .modal-content .modal-body {
     padding: 8px 16px;
+  }
+  .news-container .news-content-cards-container .modal .modal-dialog .modal-content .modal-body .modal-body-second .modal-body-second-moreEvents-part .modal-body-second-moreEvents-part-title-cards {
+    flex-direction: column;
   }
 }
 /* ------------------POLICY - policy issues------------------ */
@@ -12637,6 +12648,9 @@ h6, .h6, .fs-6 {
   }
   .policy-container .policy-body-part .modal .modal-dialog .modal-content .modal-body {
     padding: 8px 16px;
+  }
+  .policy-container .policy-body-part .modal .modal-dialog .modal-content .modal-body .modal-body-second .modal-body-second-moreEvents-part .modal-body-second-moreEvents-part-title-cards {
+    flex-direction: column;
   }
   .policy-container .policy-body-part-last {
     width: -moz-fit-content;
@@ -12961,6 +12975,12 @@ h6, .h6, .fs-6 {
   .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-text-part img {
     width: 206.5px;
     height: 147px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-email .modal-body .modal-body-text-part,
+  .contactUs-container .container .contactUs-part .contactUs-part-trigger-part .modal-donate .modal-body .modal-body-text-part {
+    flex-direction: column;
   }
 }
 /* ------------------BOTTOM BANNER - bottom slogan banner------------------*/
