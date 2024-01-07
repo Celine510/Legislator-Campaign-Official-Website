@@ -6,7 +6,8 @@ github pages: https://celine510.github.io/Legislator-campaign-official-website/
 - CSS3
 - Sass
 - Bootstrap
-- AOS
+- JavaScript
+- AOS 滾動動畫套件
 ## UI Designer 設計師 - jhen ✨✨
 Link: https://2023.thef2e.com/users/12061579704041679194
 ## Authorize 授權
