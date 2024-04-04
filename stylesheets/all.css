@@ -286,8 +286,8 @@ h6, .fs-6 {
 .slogan-container {
   background: var(--brown);
 }
-.slogan-container .ticker {
-  overflow-x: hidden;
+.slogan-container .marquee-container {
+  overflow: hidden;
   white-space: nowrap;
   display: flex;
   justify-content: space-evenly;
@@ -296,15 +296,25 @@ h6, .fs-6 {
   margin-bottom: 0;
   gap: 24px;
 }
-.slogan-container .ticker span {
+.slogan-container .marquee-container .marquee-text {
   font-size: 64px;
   font-family: var(--ff-mantouSans);
   color: #fff;
-  text-wrap: nowrap;
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll 120s linear infinite;
 }
 
+@keyframes scroll {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
 @media screen and (max-width: 992px) {
-  .slogan-container .ticker span {
+  .slogan-container .marquee-container .marquee-text {
     font-size: 44px;
   }
 }

@@ -166,8 +166,8 @@
 .slogan-container{
   background: var(--brown);
   
-  .ticker{
-    overflow-x: hidden;
+  .marquee-container{
+    overflow: hidden;
     white-space: nowrap;
     display: flex;
     justify-content: space-evenly;
@@ -176,18 +176,29 @@
     margin-bottom: 0;
     gap: 24px;
     
-    span{
+    .marquee-text{
       font-size: 64px;
       font-family: var(--ff-mantouSans);
       color: #fff;
-      text-wrap:nowrap;
+      display: inline-block;
+      white-space: nowrap;
+      animation: scroll 120s linear infinite;
     }
+  }
+}
+@keyframes scroll {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-100%);
   }
 }
 @media screen and (max-width: 992px) {
   .slogan-container {
-    .ticker {
-      span {
+    .marquee-container {
+      .marquee-text {
         font-size: 44px;
       }
     }
